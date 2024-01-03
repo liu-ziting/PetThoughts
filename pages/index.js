@@ -134,7 +134,7 @@ export default function components() {
                     <form onSubmit={submitForm} encType="multipart/form-data">
                         <div className="grid w-full gap-4 mt-4">
                             <Label htmlFor="catImage">上传你宠物的照片</Label>
-                            <Input id="catImage" name="image" type="file" onChange={previewImage} />
+                            <Input id="catImage" name="image" type="file" accept="image/*" onChange={previewImage} />
                             <Button type="submit" variant="dark" disabled={loading || compressing}>
                                 {compressing ? '识别图像中' : loading ? '分析图像' : '分析'}
                             </Button>
