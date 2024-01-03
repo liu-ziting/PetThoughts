@@ -141,6 +141,7 @@ export default function components() {
                         </div>
                     </form>
                 </div>
+                <p className="tip mt-4">本服务不会收集、存储或使用任何与图片相关的个人信息</p>
                 <footer className="flex justify-center items-center">
                     &copy; 2024
                     {'-'}
@@ -150,7 +151,10 @@ export default function components() {
                     </a>
                     . All rights reserved.
                 </footer>
-                <p className="tip">本服务不会收集、存储或使用任何与图片相关的个人信息</p>
+                <p>
+                    <a href="https://gemini.smartai.wtf/">GeminiChat</a> |
+                    <a href="https://tools.smartai.wtf/"> SmartAI</a>
+                </p>
             </main>
 
             <style jsx>{`
@@ -169,7 +173,7 @@ export default function components() {
                     padding: 1rem;
                 }
                 .tip {
-                    font-size: 13px;
+                    font-size: 12px;
                 }
             `}</style>
         </div>
