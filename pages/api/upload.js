@@ -20,7 +20,6 @@ router.all((req, res, next) => {
         next()
     }
 })
-
 router.post(async (req, res) => {
     console.log('req.file:', req.file) // 添加日志
     try {
@@ -56,8 +55,7 @@ router.post(async (req, res) => {
 
         if (!req.file) {
             console.log('No file uploaded.') // 添加日志
-            res.status(400).json({ error: 'No file uploaded.' })
-            return
+            return res.status(400).json({ error: 'No file uploaded.' })
         }
 
         const parts = [
@@ -80,21 +78,15 @@ router.post(async (req, res) => {
 
         if (!result) {
             console.log('No result from generateContent.') // 添加日志
+            return res.status(502).json({ error: 'Bad Gateway' })
         } else {
             console.log('Result from generateContent:', result) // 添加日志
+            const responseText = result.response.text()
+            return res.status(200).json({ result: responseText })
         }
-
-        const responseText = result.response.text()
-        res.status(200).json({ result: responseText })
     } catch (error) {
         console.error('Error during request:', error)
-        if (!res.headersSent) {
-            res.status(500).json({ error: 'Internal Server Error' })
-        }
-    } finally {
-        if (!res.headersSent) {
-            res.status(500).json({ error: 'Unknown error' })
-        }
+        return res.status(500).json({ error: 'Internal Server Error' })
     }
 })
 
