@@ -76,11 +76,11 @@ export default function components() {
         const response = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
-            timeout: 10000 // 设置超时时间为10秒
+            timeout: 20000 // 设置超时时间为10秒
         })
         if (!response.ok) {
             const errorData = await response.json()
-            setResult({ data: '请求超时请重试！', error: errorData.error })
+            setResult({ data: '我好像没有识别出来，换一张或者重新上传！', error: errorData.error })
             setLoading(false)
             return
         }
