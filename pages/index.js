@@ -121,7 +121,7 @@ export default function components() {
                                 {compressing
                                     ? '🐱🐱🐱🐱🐱🐱'
                                     : loading
-                                    ? '分析中...'
+                                    ? '识别图像中...'
                                     : result.error
                                     ? `发生错误，请重试。错误信息: ${result.error}`
                                     : result.data ||
@@ -136,7 +136,7 @@ export default function components() {
                             <Label htmlFor="catImage">上传你宠物的照片</Label>
                             <Input id="catImage" name="image" type="file" onChange={previewImage} />
                             <Button type="submit" variant="dark" disabled={loading || compressing}>
-                                {compressing ? '扫描图像' : loading ? '分析图像' : '分析'}
+                                {compressing ? '识别图像中' : loading ? '分析图像' : '分析'}
                             </Button>
                         </div>
                     </form>
@@ -150,6 +150,7 @@ export default function components() {
                     </a>
                     . All rights reserved.
                 </footer>
+                <p className="tip">本服务不会收集、存储或使用任何与图片相关的个人信息</p>
             </main>
 
             <style jsx>{`
@@ -166,6 +167,9 @@ export default function components() {
                     justify-content: center;
                     min-height: 100vh;
                     padding: 1rem;
+                }
+                .tip {
+                    font-size: 13px;
                 }
             `}</style>
         </div>
