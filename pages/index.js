@@ -140,6 +140,15 @@ export default function components() {
                         </div>
                     </form>
                 </div>
+                <footer class="flex justify-center items-center">
+                    &copy; 2024
+                    {'-'}
+                    <a href="https://jingle.bio/liuziting/" target="_blank" rel="noopener noreferrer">
+                        {' '}
+                        liuziting
+                    </a>
+                    . All rights reserved.
+                </footer>
             </main>
 
             <style jsx>{`
