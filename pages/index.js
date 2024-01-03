@@ -40,7 +40,7 @@ export default function components() {
 
         if (file && validTypes.includes(file.type)) {
             const options = {
-                maxSizeMB: 5, // 最大文件大小为1MB
+                maxSizeMB: 10, // 最大文件大小为10MB
                 maxWidthOrHeight: 1920, // 图片最大宽度或高度为1920像素
                 useWebWorker: true
             }
@@ -75,7 +75,8 @@ export default function components() {
 
         const response = await fetch('/api/upload', {
             method: 'POST',
-            body: formData
+            body: formData,
+            timeout: 10000 // 设置超时时间为10秒
         })
         if (!response.ok) {
             const errorData = await response.json()
