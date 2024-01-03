@@ -131,7 +131,7 @@ export default function components() {
                 </Card>
                 <div className="w-full max-w-md px-2 py-2">
                     <form onSubmit={submitForm} encType="multipart/form-data">
-                        <div className="grid w-full gap-2">
+                        <div className="grid w-full gap-4 mt-4">
                             <Label htmlFor="catImage">上传你宠物的照片</Label>
                             <Input id="catImage" name="image" type="file" onChange={previewImage} />
                             <Button type="submit" variant="dark" disabled={loading || compressing}>
@@ -140,7 +140,7 @@ export default function components() {
                         </div>
                     </form>
                 </div>
-                <footer class="flex justify-center items-center">
+                <footer className="flex justify-center items-center">
                     &copy; 2024
                     {'-'}
                     <a href="https://jingle.bio/liuziting/" target="_blank" rel="noopener noreferrer">
