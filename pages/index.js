@@ -79,6 +79,8 @@ export default function components() {
         })
         if (!response.ok) {
             const errorData = await response.json()
+            console.log('errorData')
+            console.log(errorData)
             setResult({ data: '', error: errorData.error })
             setLoading(false)
             return
