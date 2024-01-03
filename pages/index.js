@@ -91,14 +91,14 @@ export default function components() {
     return (
         <div className="container">
             <Head>
-                <title>我知道你的猫在想什么！</title>
+                <title>我知道你的宠物在想什么！</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <main className="flex flex-col items-center justify-center min-h-screen py-2">
                 <Card className="max-w-md ">
                     <CardHeader>
                         <div className="flex items-center">
-                            <h2 className="text-2xl font-bold">我知道你的猫在想什么！</h2>
+                            <h2 className="text-2xl font-bold">我知道你的宠物在想什么！</h2>
                         </div>
                     </CardHeader>
                     <CardContent>
@@ -123,7 +123,7 @@ export default function components() {
                                     ? '分析中...'
                                     : result.error
                                     ? `发生错误，请重试。错误信息: ${result.error}`
-                                    : result.data || '🐱: 你去哪儿了？我已经等你很久了'}
+                                    : result.data || '🐱: 我好开心呀，草地上真好玩！'}
                             </p>
                         </div>
                     </CardContent>
