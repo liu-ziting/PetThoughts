@@ -80,7 +80,7 @@ export default function components() {
         })
         if (!response.ok) {
             const errorData = await response.json()
-            setResult({ data: '我好像没有识别出来，换一张或者重新上传！', error: errorData.error })
+            setResult({ data: '我好像没有识别出来，换一张图片或者重新上传！', error: errorData.error })
             setLoading(false)
             return
         }
@@ -133,10 +133,10 @@ export default function components() {
                 <div className="w-full max-w-md px-2 py-2">
                     <form onSubmit={submitForm} encType="multipart/form-data">
                         <div className="grid w-full gap-4 mt-4">
-                            <Label htmlFor="catImage">上传你宠物的照片</Label>
+                            <Label htmlFor="catImage">上传你宠物的照片，AI告诉你它在想些什么~</Label>
                             <Input id="catImage" name="image" type="file" accept="image/*" onChange={previewImage} />
                             <Button type="submit" variant="dark" disabled={loading || compressing}>
-                                {compressing ? '识别图像中' : loading ? '分析图像' : '分析'}
+                                {compressing ? '识别图像中' : loading ? '识别图像中' : '让我看看你在想什么呢'}
                             </Button>
                         </div>
                     </form>
