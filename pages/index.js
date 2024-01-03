@@ -40,7 +40,7 @@ export default function components() {
 
         if (file && validTypes.includes(file.type)) {
             const options = {
-                maxSizeMB: 1, // 最大文件大小为1MB
+                maxSizeMB: 5, // 最大文件大小为1MB
                 maxWidthOrHeight: 1920, // 图片最大宽度或高度为1920像素
                 useWebWorker: true
             }
@@ -79,9 +79,7 @@ export default function components() {
         })
         if (!response.ok) {
             const errorData = await response.json()
-            console.log('errorData')
-            console.log(errorData)
-            setResult({ data: '', error: errorData.error })
+            setResult({ data: '请求超时请重试！', error: errorData.error })
             setLoading(false)
             return
         }
