@@ -158,6 +158,20 @@ export default function components() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <main className="flex flex-col items-center justify-center min-h-screen py-2">
+                <div className="radio-inputs">
+                    <label className="radio">
+                        <a href="javascript:;">
+                            <input type="radio" name="radio" defaultChecked={true} />
+                            <span className="name">宠物的想法</span>
+                        </a>
+                    </label>
+                    <label className="radio">
+                        <a href="https://babythoughts.netlify.app">
+                            <input type="radio" name="radio" />
+                            <span className="name">宝宝的想法</span>
+                        </a>
+                    </label>
+                </div>
                 <Card className="max-w-md ">
                     <CardHeader>
                         <div className="flex items-center">
@@ -249,6 +263,45 @@ export default function components() {
                 }
                 .tip {
                     font-size: 12px;
+                }
+                .radio-inputs {
+                    position: relative;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 0.5rem;
+                    background-color: #eee;
+                    box-sizing: border-box;
+                    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+                    padding: 0.25rem;
+                    width: 100%;
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+
+                .radio-inputs .radio {
+                    flex: 1 1 auto;
+                    text-align: center;
+                }
+
+                .radio-inputs .radio input {
+                    display: none;
+                }
+
+                .radio-inputs .radio .name {
+                    display: flex;
+                    cursor: pointer;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0.5rem;
+                    border: none;
+                    padding: 0.5rem 0;
+                    color: rgba(51, 65, 85, 1);
+                    transition: all 0.15s ease-in-out;
+                }
+
+                .radio-inputs .radio input:checked + .name {
+                    background-color: #fff;
+                    font-weight: 600;
                 }
             `}</style>
         </div>
