@@ -202,7 +202,14 @@ export default function components() {
                     >
                         <div className="grid w-full gap-4 mt-4">
                             <Label htmlFor="catImage">上传你宠物的照片，AI告诉你它在想些什么~</Label>
-                            <Input id="catImage" name="image" type="file" accept="image/*" onChange={previewImage} />
+                            <Input
+                                required
+                                id="catImage"
+                                name="image"
+                                type="file"
+                                accept="image/*"
+                                onChange={previewImage}
+                            />
                             <Button type="submit" variant="dark" disabled={loading || compressing}>
                                 {compressing ? '识别图像中' : loading ? '识别图像中' : '让我看看你在想什么呢'}
                             </Button>
