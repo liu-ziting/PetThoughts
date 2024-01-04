@@ -34,6 +34,64 @@ export default function components() {
         }
     }, [])
 
+    // const previewImage = async event => {
+    //     const file = event.target.files[0]
+    //     const validTypes = ['image/png', 'image/jpeg', 'image/webp']
+
+    //     if (file && validTypes.includes(file.type)) {
+    //         const options = {
+    //             maxSizeMB: 10, // 最大文件大小为10MB
+    //             maxWidthOrHeight: 1920, // 图片最大宽度或高度为1920像素
+    //             useWebWorker: true
+    //         }
+    //         try {
+    //             setCompressing(true)
+    //             const compressedFile = await imageCompression(file, options)
+    //             const reader = new FileReader()
+    //             reader.onloadend = async () => {
+    //                 setImagePreview(reader.result)
+    //                 setCompressing(false)
+    //                 const blob = await (await fetch(reader.result)).blob()
+    //                 const file = new File([blob], 'compressedImage.jpg', { type: 'image/jpeg' })
+    //                 await submitForm(file) // 在这里调用 submitForm 函数
+    //             }
+    //             reader.readAsDataURL(compressedFile)
+    //         } catch (error) {
+    //             console.error('Error during compression', error)
+    //             alert('Cannot compress the image.')
+    //             setCompressing(false)
+    //         }
+    //     } else {
+    //         alert('Please select an image file (png, jpeg, webp).')
+    //         setImagePreview('')
+    //     }
+    // }
+
+    // const submitForm = async file => {
+    //     setLoading(true)
+
+    //     const formData = new FormData()
+    //     formData.append('image', file)
+
+    //     const response = await fetch('/api/upload', {
+    //         method: 'POST',
+    //         body: formData,
+    //         timeout: 20000 // 设置超时时间为10秒
+    //     })
+    //     if (!response.ok) {
+    //         const errorData = await response.json()
+    //         setResult({ data: '我好像没有识别出来，换一张图片或者重新上传！', error: errorData.error })
+    //         setLoading(false)
+    //         return
+    //     }
+    //     const data = await response.json()
+    //     setResult({ data: data.result, error: '' })
+    //     setLoading(false)
+    // }
+
+    const [selectedFile, setSelectedFile] = useState(null)
+
+    // 预览图片的函数
     const previewImage = async event => {
         const file = event.target.files[0]
         const validTypes = ['image/png', 'image/jpeg', 'image/webp']
@@ -51,9 +109,10 @@ export default function components() {
                 reader.onloadend = async () => {
                     setImagePreview(reader.result)
                     setCompressing(false)
-                    const blob = await (await fetch(reader.result)).blob()
-                    const file = new File([blob], 'compressedImage.jpg', { type: 'image/jpeg' })
-                    await submitForm(file) // 在这里调用 submitForm 函数
+                    // 更新状态以保存压缩后的文件
+                    setSelectedFile(compressedFile)
+                    // 在这里调用 submitForm 函数
+                    submitForm(compressedFile)
                 }
                 reader.readAsDataURL(compressedFile)
             } catch (error) {
@@ -67,12 +126,15 @@ export default function components() {
         }
     }
 
+    // 提交表单的函数
     const submitForm = async file => {
         setLoading(true)
 
+        // 构建 FormData
         const formData = new FormData()
         formData.append('image', file)
 
+        // 发送请求
         const response = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
@@ -121,7 +183,7 @@ export default function components() {
                                 {compressing
                                     ? '🐱🐱🐱🐱🐱🐱'
                                     : loading
-                                    ? '识别图像中...'
+                                    ? '让我想想你的宠物在想些什么呢...'
                                     : result.error
                                     ? `发生错误，请重试。错误信息: ${result.error}`
                                     : result.data ||
@@ -131,7 +193,13 @@ export default function components() {
                     </CardContent>
                 </Card>
                 <div className="w-full max-w-md px-2 py-2">
-                    <form onSubmit={submitForm} encType="multipart/form-data">
+                    <form
+                        onSubmit={e => {
+                            e.preventDefault()
+                            submitForm(selectedFile)
+                        }}
+                        encType="multipart/form-data"
+                    >
                         <div className="grid w-full gap-4 mt-4">
                             <Label htmlFor="catImage">上传你宠物的照片，AI告诉你它在想些什么~</Label>
                             <Input id="catImage" name="image" type="file" accept="image/*" onChange={previewImage} />
