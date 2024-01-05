@@ -158,7 +158,7 @@ export default function components() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <main className="flex flex-col items-center justify-center min-h-screen py-2">
-                <div className="radio-inputs">
+                <div className="radio-inputs max-w-md ">
                     <label className="radio">
                         <a href="javascript:;">
                             <input type="radio" name="radio" defaultChecked={true} />
@@ -275,7 +275,7 @@ export default function components() {
                     padding: 0.25rem;
                     width: 100%;
                     font-size: 14px;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                 }
 
                 .radio-inputs .radio {
