@@ -98,7 +98,7 @@ export default function components() {
 
         if (file && validTypes.includes(file.type)) {
             const options = {
-                maxSizeMB: 10, // 最大文件大小为10MB
+                maxSizeMB: 20, // 最大文件大小为10MB
                 maxWidthOrHeight: 1920, // 图片最大宽度或高度为1920像素
                 useWebWorker: true
             }
@@ -138,7 +138,7 @@ export default function components() {
         const response = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
-            timeout: 20000 // 设置超时时间为10秒
+            timeout: 50000 // 设置超时时间为10秒
         })
         if (!response.ok) {
             const errorData = await response.json()
@@ -199,7 +199,7 @@ export default function components() {
                                     : loading
                                     ? '让我想想你的宠物在想些什么呢...'
                                     : result.error
-                                    ? `发生错误，请重试。错误信息: ${result.error}`
+                                    ? `好像我没看懂它在想什么，请重试或换一张图片！`
                                     : result.data ||
                                       '🐱: 哎呀，草地上有好多枯叶，我得快点跑到草丛里，这样铲屎官就看不到我了！'}
                             </p>
