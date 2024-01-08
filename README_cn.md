@@ -46,6 +46,8 @@ Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking
 
 ## 开发
 
+> 你只需要按照 Gemini 文档调整下面参数和修改成你自己需要的 Prompt 就可以了！
+
 ```javascript
 // pages\api\upload.js
 // generation config

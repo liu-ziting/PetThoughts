@@ -44,7 +44,9 @@ This is a fun and practical image recognition application that allows you to gai
 | ---------------- | --------------------------------------------------------------------------------------------- | -------- |
 | `GEMINI_API_KEY` | Your API Key for GEMINI. You can get it from[here](https://makersuite.google.com/app/apikey). | yes      |
 
-## develop
+## Develop
+
+> You only need to adjust the following parameters according to the Gemini documentation and modify it to the prompt you need!
 
 ```javascript
 // pages\api\upload.js
