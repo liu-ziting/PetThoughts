@@ -69,6 +69,12 @@ const parts = [
 >
 > 根据[《生成式人工智能服务管理暂行办法》](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)的要求，请勿对中国地区公众提供一切未经备案的生成式人工智能服务。
 
+## 如果有帮助
+
+> 如果这个项目对你有帮助，可以请我喝一杯咖啡。
+
+<img style="width:200px" src="https://iknowwhatyourcatisthinking.netlify.app/qrcode.jpg"/>
+
 ## 执照
 
 MIT © [liu-ziting](https://github.com/liu-ziting/PetThoughts/blob/main/LICENSE.txt)
