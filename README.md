@@ -1,46 +1,46 @@
-# 我知道你的宠物在想什么
+# I Know What Your Pet Is Thinking
 
-中文 | [English](README_en.md)
+English | [中文](README_cn.md)
 
-Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking.netlify.app)
+Live demo:[I Know What Your Pet Is Thinking](https://iknowwhatyourcatisthinking.netlify.app)
 
-## 简介
+## Introduction
 
-【我知道你的宠物在想什么】 是一个基于 Gemini Pro API 构建的图片识别项目，通过上传你宠物的照片，该项目能够智能分析你的宠物的表情和环境，并推测出它们可能在想些什么。
+"I Know What Your Pet Is Thinking" is an image recognition application built on the Gemini Pro API. By uploading a photo of your pet, the app can intelligently analyze your pet's facial expressions and environment, and speculate on what they might be thinking.
 
-### 功能特
+### Features
 
--   图片识别：利用 Gemini-pro-vision 的图像识别技术，能够准确地识别宠物的表情和环境。
--   表情分析：通过分析宠物的表情 Gemini-pro-vision 可以推测出宠物可能的情绪状态，如开心、惊讶、困惑等。
--   环境分析：Gemini-pro-vision 还能根据宠物所处的环境，推测出它们可能的活动场景，如户外玩耍、室内休息等。
--   自然语言处理：结合图像识别和自然语言处理技术，Gemini-pro-vision 可以将宠物的情绪和活动场景转化为可读性高的文字描述。
--   用户友好界面：提供简洁直观的用户界面，使用户能够轻松上传照片并获取宠物分析结果。
+-   Image recognition: Using the Gemini-pro-vision's image recognition technology, it can accurately identify the pet's facial expressions and environment.
+-   Facial analysis: By analyzing the pet's facial expressions, Gemini-pro-vision can infer the pet's possible emotional states, such as happiness, surprise, confusion, etc.
+-   Environment analysis: Gemini-pro-vision can also infer the possible activities of pets based on their environment, such as outdoor play, indoor rest, etc.
+-   Natural language processing: Combining image recognition and natural language processing technology, Gemini-pro-vision can convert the pet's emotions and activities into readable text descriptions.
+-   User-friendly interface: Provides a clean and intuitive user interface that allows users to easily upload photos and get pet analysis results.
 
-### 注意事项
+### Notes
 
-请确保上传的照片清晰可见，以获得更准确的分析结果。
-本项目仅适用于识别和分析常见宠物如猫、狗等，对于其他动物可能不具有准确性。
-这是一款有趣实用的图片识别项目，让你更深入地了解你的宠物的情绪和喜好。无论是为了更好地照顾宠物，还是与朋友们分享宠物的趣事，这个网站都能为你带来愉悦的使用体验。
+Please make sure that the uploaded photos are clear and visible to obtain more accurate analysis results.
+This application is only suitable for identifying and analyzing common pets such as cats and dogs. It may not be accurate for other animals.
+This is a fun and practical image recognition application that allows you to gain a deeper understanding of your pet's emotions and preferences. Whether it's for better care of your pet or sharing interesting stories about pets with friends, this website can provide you with a pleasant user experience.
 
-## 部署
+## Deployment
 
-### 使用 Netlify 部署（推荐）
+### Deploying with Netlify (Recommended)
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/liu-ziting/petThoughts)
 
-### 使用 Vercel 部署
+### Deploying with Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/liu-ziting/PetThoughts&env=GEMINI_API_KEY)
 
-> 只需单击上面的按钮并按照说明即可部署您自己的应用程序副本
+> Simply click the button above and follow the instructions to deploy your own copy of the application.
 
-### 环境变量
+### Environment Variables
 
-| Name             | Description                                                                                    | Required |
-| ---------------- | ---------------------------------------------------------------------------------------------- | -------- |
-| `GEMINI_API_KEY` | Your API Key for GEMINI. You can get it from [here](https://makersuite.google.com/app/apikey). | yes      |
+| Name             | Description                                                                                   | Required |
+| ---------------- | --------------------------------------------------------------------------------------------- | -------- |
+| `GEMINI_API_KEY` | Your API Key for GEMINI. You can get it from[here](https://makersuite.google.com/app/apikey). | yes      |
 
-## 开发
+## develop
 
 ```javascript
 // pages\api\upload.js
@@ -54,21 +54,21 @@ const generationConfig = {
 // prompt config
 const parts = [
     {
-        text: '你是一位熟练的宠物语言翻译员，根据用户传的照片，你识别出是什么宠物，准确猜测宠物的情绪和想法，你可以根据宠物的肢体语言、表情、周围环境猜测宠物想说什么。翻译完后，请根据宠物的语气给出宠物的“声音”，口语自然一点，用中文回答，格式如下：🐶：<这是什么宠物><宠物的想法>。用户上传的图片中，如果没有宠物，则返回“图片中没有宠物~""'
+        text: 'You are a skilled pet language translator. Based on the photos uploaded by users, you identify what kind of pet it is and accurately guess the pet's emotions and thoughts. You can guess what the pet wants to say based on the pet's body language, expression, and surrounding environment. After the translation, please give the "voice" of the pet according to the tone of the pet. Speak more naturally and answer in Chinese. The format is as follows: 🐶: <What kind of pet is this> <What the pet is thinking>. If there is no pet in the picture uploaded by the user, it will return "There is no pet in the picture~""'
     }
     ...
 ]
 ```
 
-## 说明
+## Disclaimer
 
-本项目前端界面代码由 [v0.dev](https://v0.dev/t/AqOuyxMjm7u 'v0.dev') 生成，接口由[Google Gemini](https://deepmind.google/technologies/gemini/#introduction 'Google Gemini') 提供，统计分析由[Google Clarity](https://clarity.microsoft.com/projects 'Google Gemini') 支持。
+The front-end code of this project is generated by [v0.dev](https://v0.dev/t/AqOuyxMjm7u 'v0.dev') ,and the interface is provided by [Google Gemini](https://deepmind.google/technologies/gemini/#introduction 'Google Gemini'),with statistical analysis powered by [Google Clarity](https://clarity.microsoft.com 'Google Clarity').
 
 > [!WARNING]
-> 本项目为开源项目，使用者必须在遵循 GOOGLE 的[使用条款](https://ai.google.dev/terms)以及**法律法规**的情况下使用，不得用于非法用途。
+> This project is an open-source project, and users must use it in compliance with the [Terms of Use](https://ai.google.dev/terms) of GOOGLE and applicable laws and regulations, and must not use it for illegal purposes.
 >
-> 根据[《生成式人工智能服务管理暂行办法》](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)的要求，请勿对中国地区公众提供一切未经备案的生成式人工智能服务。
+> In accordance with the requirements of the "Interim Measures for the Administration of Generative AI Services" [issued by China's Cyberspace Administration](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm), please do not provide any unregistered generative AI services to the public in China.
 
-## 执照
+## License
 
 MIT © [liu-ziting](https://github.com/liu-ziting/PetThoughts/blob/main/LICENSE.txt)
