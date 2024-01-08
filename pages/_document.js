@@ -5,7 +5,6 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    {/* 在这里添加Google clarity 代码 */}
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `
