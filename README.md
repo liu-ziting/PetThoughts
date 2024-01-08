@@ -2,10 +2,7 @@
 
 中文 | [English](README_en.md)
 
-Live demo:
-
--   Netlify：[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking.netlify.app)
--   Vercel：[我知道你的宠物在想什么](https://pet-thoughts.vercel.app)
+Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking.netlify.app)
 
 ## 简介
 
@@ -45,9 +42,7 @@ Live demo:
 
 ## 说明
 
-本项目前端界面代码由 [v0.dev](http://v0.dev 'v0.dev') 生成，接口由[Google Gemini](https://deepmind.google/technologies/gemini/#introduction 'Google Gemini') 提供。
-
-[![](https://pic.imgdb.cn/item/659b5fc9871b83018a4e656a.jpg)](https://v0.dev/t/AqOuyxMjm7u)
+本项目前端界面代码由 [v0.dev](https://v0.dev/t/AqOuyxMjm7u 'v0.dev') 生成，接口由[Google Gemini](https://deepmind.google/technologies/gemini/#introduction 'Google Gemini') 提供。
 
 > [!WARNING]
 > 本项目为开源项目，使用者必须在遵循 GOOGLE 的[使用条款](https://ai.google.dev/terms)以及**法律法规**的情况下使用，不得用于非法用途。
