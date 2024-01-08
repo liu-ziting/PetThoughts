@@ -28,9 +28,13 @@ Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/liu-ziting/PetThoughts)
 
+<img src="https://iknowwhatyourcatisthinking.netlify.app/v1.png"/>
+
 ### 使用 Vercel 部署
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/liu-ziting/PetThoughts&env=GEMINI_API_KEY)
+
+<img src="https://iknowwhatyourcatisthinking.netlify.app/v2.png"/>
 
 > 只需单击上面的按钮并按照说明即可部署您自己的应用程序副本
 

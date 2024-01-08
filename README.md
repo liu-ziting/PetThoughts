@@ -26,11 +26,15 @@ This is a fun and practical image recognition application that allows you to gai
 
 ### Deploying with Netlify (Recommended)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/liu-ziting/petThoughts)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/liu-ziting/PetThoughts)
+
+<img src="https://iknowwhatyourcatisthinking.netlify.app/v1.png"/>
 
 ### Deploying with Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/liu-ziting/PetThoughts&env=GEMINI_API_KEY)
+
+<img src="https://iknowwhatyourcatisthinking.netlify.app/v2.png"/>
 
 > Simply click the button above and follow the instructions to deploy your own copy of the application.
 
