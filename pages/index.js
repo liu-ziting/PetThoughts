@@ -14,6 +14,8 @@ export default function components() {
     const [loading, setLoading] = useState(false)
     const [result, setResult] = useState({ data: '', error: '' })
 
+    const [selectedFile, setSelectedFile] = useState(null)
+
     // 添加 useEffect 钩子
     useEffect(() => {
         const pasteHandler = async event => {
@@ -33,63 +35,6 @@ export default function components() {
             window.removeEventListener('paste', pasteHandler)
         }
     }, [])
-
-    // const previewImage = async event => {
-    //     const file = event.target.files[0]
-    //     const validTypes = ['image/png', 'image/jpeg', 'image/webp']
-
-    //     if (file && validTypes.includes(file.type)) {
-    //         const options = {
-    //             maxSizeMB: 10, // 最大文件大小为10MB
-    //             maxWidthOrHeight: 1920, // 图片最大宽度或高度为1920像素
-    //             useWebWorker: true
-    //         }
-    //         try {
-    //             setCompressing(true)
-    //             const compressedFile = await imageCompression(file, options)
-    //             const reader = new FileReader()
-    //             reader.onloadend = async () => {
-    //                 setImagePreview(reader.result)
-    //                 setCompressing(false)
-    //                 const blob = await (await fetch(reader.result)).blob()
-    //                 const file = new File([blob], 'compressedImage.jpg', { type: 'image/jpeg' })
-    //                 await submitForm(file) // 在这里调用 submitForm 函数
-    //             }
-    //             reader.readAsDataURL(compressedFile)
-    //         } catch (error) {
-    //             console.error('Error during compression', error)
-    //             alert('Cannot compress the image.')
-    //             setCompressing(false)
-    //         }
-    //     } else {
-    //         alert('Please select an image file (png, jpeg, webp).')
-    //         setImagePreview('')
-    //     }
-    // }
-
-    // const submitForm = async file => {
-    //     setLoading(true)
-
-    //     const formData = new FormData()
-    //     formData.append('image', file)
-
-    //     const response = await fetch('/api/upload', {
-    //         method: 'POST',
-    //         body: formData,
-    //         timeout: 20000 // 设置超时时间为10秒
-    //     })
-    //     if (!response.ok) {
-    //         const errorData = await response.json()
-    //         setResult({ data: '我好像没有识别出来，换一张图片或者重新上传！', error: errorData.error })
-    //         setLoading(false)
-    //         return
-    //     }
-    //     const data = await response.json()
-    //     setResult({ data: data.result, error: '' })
-    //     setLoading(false)
-    // }
-
-    const [selectedFile, setSelectedFile] = useState(null)
 
     // 预览图片的函数
     const previewImage = async event => {
@@ -138,7 +83,7 @@ export default function components() {
         const response = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
-            timeout: 20000 // 设置超时时间为10秒
+            timeout: 20000
         })
         if (!response.ok) {
             const errorData = await response.json()
@@ -158,20 +103,6 @@ export default function components() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <main className="flex flex-col items-center justify-center min-h-screen py-2">
-                <div className="radio-inputs max-w-md ">
-                    <label className="radio">
-                        <a href="javascript:;">
-                            <input type="radio" name="radio" defaultChecked={true} />
-                            <span className="name">宠物的想法</span>
-                        </a>
-                    </label>
-                    <label className="radio">
-                        <a href="https://babythoughts.netlify.app">
-                            <input type="radio" name="radio" />
-                            <span className="name">宝宝的想法</span>
-                        </a>
-                    </label>
-                </div>
                 <Card className="max-w-md ">
                     <CardHeader>
                         <div className="flex items-center">
@@ -242,7 +173,8 @@ export default function components() {
                 </footer>
                 <p>
                     <a href="https://gemini.smartai.wtf/">GeminiChat</a> |
-                    <a href="https://tools.smartai.wtf/"> SmartAI</a>
+                    <a href="https://tools.smartai.wtf/"> SmartAI</a> |
+                    <a href="https://babythoughts.netlify.app/"> BabyThoughts</a>
                 </p>
             </main>
 
@@ -260,48 +192,6 @@ export default function components() {
                     justify-content: center;
                     min-height: 100vh;
                     padding: 1rem;
-                }
-                .tip {
-                    font-size: 12px;
-                }
-                .radio-inputs {
-                    position: relative;
-                    display: flex;
-                    flex-wrap: wrap;
-                    border-radius: 0.5rem;
-                    background-color: #eee;
-                    box-sizing: border-box;
-                    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-                    padding: 0.25rem;
-                    width: 100%;
-                    font-size: 14px;
-                    margin-bottom: 10px;
-                }
-
-                .radio-inputs .radio {
-                    flex: 1 1 auto;
-                    text-align: center;
-                }
-
-                .radio-inputs .radio input {
-                    display: none;
-                }
-
-                .radio-inputs .radio .name {
-                    display: flex;
-                    cursor: pointer;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 0.5rem;
-                    border: none;
-                    padding: 0.5rem 0;
-                    color: rgba(51, 65, 85, 1);
-                    transition: all 0.15s ease-in-out;
-                }
-
-                .radio-inputs .radio input:checked + .name {
-                    background-color: #fff;
-                    font-weight: 600;
                 }
             `}</style>
         </div>
