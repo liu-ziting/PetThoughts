@@ -40,11 +40,35 @@ Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking
 | ---------------- | ---------------------------------------------------------------------------------------------- | -------- |
 | `GEMINI_API_KEY` | Your API Key for GEMINI. You can get it from [here](https://makersuite.google.com/app/apikey). | yes      |
 
+## 开发
+
+```javascript
+// pages\api\upload.js
+// generation config
+const generationConfig = {
+    temperature: 1,
+    topK: 32,
+    topP: 1,
+    maxOutputTokens: 8000
+}
+// prompt config
+const parts = [
+    {
+        text: '你是一位熟练的宠物语言翻译员，根据用户传的照片，你识别出是什么宠物，准确猜测宠物的情绪和想法，你可以根据宠物的肢体语言、表情、周围环境猜测宠物想说什么。翻译完后，请根据宠物的语气给出宠物的“声音”，口语自然一点，用中文回答，格式如下：🐶：<这是什么宠物><宠物的想法>。用户上传的图片中，如果没有宠物，则返回“图片中没有宠物~""'
+    }
+    ...
+]
+```
+
 ## 说明
 
-本项目前端界面代码由 [v0.dev](https://v0.dev/t/AqOuyxMjm7u 'v0.dev') 生成，接口由[Google Gemini](https://deepmind.google/technologies/gemini/#introduction 'Google Gemini') 提供。
+本项目前端界面代码由 [v0.dev](https://v0.dev/t/AqOuyxMjm7u 'v0.dev') 生成，接口由[Google Gemini](https://deepmind.google/technologies/gemini/#introduction 'Google Gemini') 提供，统计分析由[Google Clarity](https://clarity.microsoft.com/projects 'Google Gemini') 支持。
 
 > [!WARNING]
 > 本项目为开源项目，使用者必须在遵循 GOOGLE 的[使用条款](https://ai.google.dev/terms)以及**法律法规**的情况下使用，不得用于非法用途。
 >
 > 根据[《生成式人工智能服务管理暂行办法》](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)的要求，请勿对中国地区公众提供一切未经备案的生成式人工智能服务。
+
+## License
+
+MIT © [liu-ziting](https://github.com/liu-ziting/PetThoughts/blob/main/LICENSE)
