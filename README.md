@@ -26,7 +26,7 @@ Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking
 
 ### 使用 Netlify 部署（推荐）
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0d1b17c9-8e29-448b-ab8a-1a02c8952855/deploy-status)](https://app.netlify.com/sites/iknowwhatyourcatisthinking/deploys)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/liu-ziting/petThoughts)
 
 ### 使用 Vercel 部署
 

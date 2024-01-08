@@ -26,7 +26,7 @@ This is a fun and practical image recognition application that allows you to gai
 
 ### Deploying with Netlify (Recommended)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0d1b17c9-8e29-448b-ab8a-1a02c8952855/deploy-status)](https://app.netlify.com/sites/iknowwhatyourcatisthinking/deploys)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/liu-ziting/petThoughts)
 
 ### Deploying with Vercel
 
