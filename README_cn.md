@@ -4,6 +4,8 @@
 
 Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking.netlify.app)
 
+<img src="https://iknowwhatyourcatisthinking.netlify.app/demo.jpg"/>
+
 ## 简介
 
 【我知道你的宠物在想什么】 是一个基于 Gemini Pro API 构建的图片识别项目，通过上传你宠物的照片，该项目能够智能分析你的宠物的表情和环境，并推测出它们可能在想些什么。

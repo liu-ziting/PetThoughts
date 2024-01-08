@@ -4,6 +4,8 @@ English | [中文](README_cn.md)
 
 Live demo:[I Know What Your Pet Is Thinking](https://iknowwhatyourcatisthinking.netlify.app)
 
+<img src="https://iknowwhatyourcatisthinking.netlify.app/demo.jpg"/>
+
 ## Introduction
 
 "I Know What Your Pet Is Thinking" is an image recognition application built on the Gemini Pro API. By uploading a photo of your pet, the app can intelligently analyze your pet's facial expressions and environment, and speculate on what they might be thinking.
