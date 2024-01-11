@@ -99,6 +99,7 @@ export default function components() {
                     <CardHeader>
                         <div className="flex items-center">
                             <h2 className="text-2xl font-bold">我知道你的宠物在想什么！</h2>
+                            <p>提示：服务发生错误！修复中~</p>
                         </div>
                     </CardHeader>
                     <CardContent>
