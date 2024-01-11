@@ -40,7 +40,7 @@ export default function components() {
 
         if (file && validTypes.includes(file.type)) {
             const options = {
-                maxSizeMB: 10,
+                maxSizeMB: 5,
                 maxWidthOrHeight: 1920,
                 useWebWorker: true
             }
@@ -75,7 +75,7 @@ export default function components() {
         const response = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
-            timeout: 10000
+            timeout: 30000
         })
         if (!response.ok) {
             const errorData = await response.json()

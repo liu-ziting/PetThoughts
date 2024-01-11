@@ -31,7 +31,7 @@ router.post(async (req, res) => {
             temperature: 1,
             topK: 32,
             topP: 1,
-            maxOutputTokens: 6000
+            maxOutputTokens: 4096
         }
 
         const safetySettings = [
