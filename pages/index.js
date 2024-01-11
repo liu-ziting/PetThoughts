@@ -100,7 +100,6 @@ export default function components() {
                         <div className="flex items-center">
                             <h2 className="text-2xl font-bold">我知道你的宠物在想什么！</h2>
                         </div>
-                        <p>提示：GeminiKey已被封，请使用自己的key调试调用~</p>
                     </CardHeader>
                     <CardContent>
                         {compressing ? (
