@@ -28,7 +28,7 @@ router.post(async (req, res) => {
         const model = genAI.getGenerativeModel({ model: MODEL_NAME })
 
         const generationConfig = {
-            temperature: 0.8,
+            temperature: 0.7,
             topK: 32,
             topP: 1,
             maxOutputTokens: 8000

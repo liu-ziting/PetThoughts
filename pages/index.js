@@ -75,7 +75,7 @@ export default function components() {
         const response = await fetch('/api/upload', {
             method: 'POST',
             body: formData,
-            timeout: 50000
+            timeout: 10000
         })
         if (!response.ok) {
             const errorData = await response.json()
