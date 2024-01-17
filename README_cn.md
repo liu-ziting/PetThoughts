@@ -40,6 +40,11 @@ Live demo:[我知道你的宠物在想什么](https://iknowwhatyourcatisthinking
 
 > 只需单击上面的按钮并按照说明即可部署您自己的应用程序副本
 
+## 已部署
+
+-   [消费降级找平替](https://cheapthing.netlify.app)
+-   [我知道你的宝宝在想什么](https://babythoughts.netlify.app)
+
 ### 环境变量
 
 | Name             | Description                                                                                    | Required |
